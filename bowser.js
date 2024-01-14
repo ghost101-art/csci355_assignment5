@@ -1,40 +1,50 @@
 function showNavigatorInfo() {
-  alert("appName: " + navigator.appName +
+  var info = "appName: " + navigator.appName +
     "\nproduct: " + navigator.product +
     "\nappVersion: " + navigator.appVersion +
     "\nuserAgent: " + navigator.userAgent +
     "\nplatform: " + navigator.platform +
-    "\nlanguage: " + navigator.language);
+    "\nlanguage: " + navigator.language;
+  document.getElementById("infoText").innerText = info;
 }
+
 
 function showWindowInfo() {
-  alert("innerHeight: " + window.innerHeight +
-    "\ninnerWidth: " + window.innerWidth);
+  var info = "innerHeight: " + window.innerHeight +
+    "\ninnerWidth: " + window.innerWidth;
+  document.getElementById("infoText").innerText = info;
 }
 
+
 function showScreenInfo() {
-  alert("width: " + screen.width +
+  var info = "width: " + screen.width +
     "\nheight: " + screen.height +
     "\navailWidth: " + screen.availWidth +
     "\navailHeight: " + screen.availHeight +
     "\ncolorDepth: " + screen.colorDepth +
-    "\npixelDepth: " + screen.pixelDepth);
+    "\npixelDepth: " + screen.pixelDepth;
+  document.getElementById("infoText").innerText = info;
 }
 
+
 function showLocationInfo() {
-  alert("href: " + location.href +
+  var info = "href: " + location.href +
     "\nhostname: " + location.hostname +
     "\npathname: " + location.pathname +
-    "\nprotocol: " + location.protocol);
+    "\nprotocol: " + location.protocol;
+  document.getElementById("infoText").innerText = info;
 }
+
 
 function showGeolocationInfo() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      alert("Latitude: " + position.coords.latitude +
-            "\nLongitude: " + position.coords.longitude);
+      var info = "Latitude: " + position.coords.latitude +
+        "\nLongitude: " + position.coords.longitude;
+      document.getElementById("infoText").innerText = info;
     });
   } else {
-    alert("Geolocation is not supported by this browser.");
+    document.getElementById("infoText").innerText = "Geolocation is not supported by this browser.";
   }
 }
+
